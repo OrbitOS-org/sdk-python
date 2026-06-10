@@ -1,0 +1,34 @@
+
+# TLS certificates — never commit
+certs/
+
+# Dependencies
+sdk_doc/node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+*.whl
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDEs
+.idea/
+.vscode/*.log
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS
+.DS_Store
+Thumbs.db

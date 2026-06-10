@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "orbitos-sdk"
+version = "26.0.1"
+description = "OrbitOS Python SDK — gRPC client for the Gravity system server"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+dependencies = [
+    "grpcio>=1.62.0",
+    "grpcio-tools>=1.62.0",
+    "protobuf>=4.25.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "mypy-protobuf>=3.5.0",
+    "mypy>=1.8.0",
+    "ruff>=0.3.0",
+]
+
+[tool.hatch.build.targets.wheel]
+# api/ must be generated before building a wheel: python scripts/gen_api.py
+packages = ["client", "logger", "metadata", "api"]
+
+[tool.hatch.build.targets.sdist]
+exclude = ["api/**"]
